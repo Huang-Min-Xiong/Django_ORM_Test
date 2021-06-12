@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>學生資料管理系統</title>
+    </head>
+    <body>
+        <table border="1" bgcolor="orange"> 
+            <tr>
+                <td>學生姓名</td>
+                <td>學生性別</td>
+                <td>學生年齡</td>
+                <td>老師</td>
+                <td>操作</td>
+            </tr>
+
+            {%for s in student%}
+                <tr>
+                    <td>{{s.sname}}</td>
+                    <td>{{s.sgender}}</td>
+                    <td>{{s.sage}}</td>
+                    <td>{{s.s_t}}</td><td>
+                        <a href="update/{{s.id}}">修改</a>
+                        <a href="delete/{{s.id}}">刪除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <a href="{% url 'add' %}">新增</a>
+    </body>
+</html>

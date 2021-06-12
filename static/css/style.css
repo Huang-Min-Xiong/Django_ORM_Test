@@ -1,0 +1,54 @@
+* {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    width: 320px;
+    height: 24px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.formErr {
+    border: 1px solid #ff0000;
+}
+
+.form .label {
+    display: block;
+    float: left;
+    width: 128px;
+    height: 40px;
+    line-height: 40px;
+    text-align: end;
+}
+
+form .txt {
+    display: block;
+    float: left;
+    width: 340px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 16px;
+}
+
+bt {
+    width: 56px;
+    height: 24px;
+    background-color: green;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+}
+
+.form .errTips {
+    width: 226px;
+    background-color: lightgreen;
+    color: darkred;
+    border-radius: 4px;
+    margin-left: 144px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    padding: 16px 48px;
+}

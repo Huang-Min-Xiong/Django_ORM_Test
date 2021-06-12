@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>新增學生</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="form">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>
+                    <span class="label">學生姓名</span>
+                    <span class="txt">
+                        <input type="text" placeholder="請輸入姓名" name='sname' required/>
+                    </span>
+                </div>
+                
+                <div style="clear: both"></div>
+                <div>
+                    <span class="label">學生性別</span>
+                    <span class="txt">
+                        <select name="sgender">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div style="clear: both"></div>
+                <div>
+                    <span class="label">學生年齡</span>
+                    <span class="txt">
+                        <input type="text" placeholder="請輸入年齡" name="sage" required/>
+                    </span>
+                </div>
+
+                <div style="clear: both"></div>
+                <div>
+                    <span class="label">教師選擇</span>
+                    <span class="txt">
+                        <select name="tid">
+                            {% for t in teacher %}
+                                <option value="{{t.id}}">
+                                    {{ t.tname }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </span>
+                </div>
+                
+                <div style="clear: both"></div>
+
+                <div>
+                    <span class="label"></span>
+                    <span class="txt">
+                        <input type="submit" class="submit" value="提交">  
+                        <a href="{% url 'index' %}" >
+                            <input type="button" class="bt" value="返回">
+                        </a>
+                    </span>
+                </div>
+                <div style="clear: both"></div>
+            </form>
+        </div>
+    </body>
+</html>
